@@ -3,7 +3,7 @@
 Demo for basic Flutter concepts including:
 - Styling
 - Widgets
-- `InheritedWidget`-based state management
+- Basic `InheritedWidget`-based state management
 - Network requests
 - `StreamProvider`s
 - Packages
