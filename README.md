@@ -4,6 +4,6 @@ Demo for basic Flutter concepts including:
 - Styling
 - Widgets
 - `InheritedWidget`-based state management
-- API requests
+- Network requests
 - `StreamProvider`s
 - Packages
