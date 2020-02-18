@@ -1,4 +1,4 @@
-# Magic 8 ball demo
+# Magic 8 ball demo (CURRENTLY WIP)
 
 Demo for basic Flutter concepts including:
 - Styling
