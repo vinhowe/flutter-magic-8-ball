@@ -25,7 +25,7 @@ class Magic8BallPage extends StatefulWidget {
   Magic8BallPage({Key key, this.title}) : super(key: key);
 
   final String title;
-  String defaultMessage = "MAGIC 8 BALL";
+  static final String defaultMessage = "MAGIC 8 BALL";
 
   @override
   _Magic8BallPageState createState() => _Magic8BallPageState();
