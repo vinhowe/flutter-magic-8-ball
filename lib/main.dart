@@ -34,12 +34,14 @@ class Magic8BallPage extends StatefulWidget {
 class _Magic8BallPageState extends State<Magic8BallPage> {
   ShakeDetector detector;
   ResponseApi api;
+  String message;
 
   @override
   void initState() {
     super.initState();
     api = ResponseApi();
     // Get initial answer
+    message = Magic8BallPage.defaultMessage;
     newAnswer();
 
     detector = ShakeDetector.autoStart(
@@ -49,8 +51,11 @@ class _Magic8BallPageState extends State<Magic8BallPage> {
         shakeThresholdGravity: 1.5);
   }
 
-  void newAnswer() {
-    api.fetchAnswer();
+  void newAnswer() async {
+    String newMessage = await api.fetchAnswer();
+    setState(() {
+      message = newMessage;
+    });
   }
 
   @override
@@ -88,24 +93,12 @@ class _Magic8BallPageState extends State<Magic8BallPage> {
             child: Center(
               child: Padding(
                 padding: const EdgeInsets.all(80.0),
-                child: StreamBuilder<String>(
-                    stream: api.streamController.stream,
-                    builder: (context, snapshot) {
-                      String message;
-
-                      if (snapshot.hasData) {
-                        message = snapshot.data;
-                      } else {
-                        message = Magic8BallPage.defaultMessage;
-                      }
-
-                      return Text(
-                        message.toUpperCase(),
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.iBMPlexMono(
-                            textStyle: Theme.of(context).textTheme.display1),
-                      );
-                    }),
+                child: Text(
+                  message.toUpperCase(),
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.iBMPlexMono(
+                      textStyle: Theme.of(context).textTheme.display1),
+                ),
               ),
             ),
           ),
@@ -117,7 +110,6 @@ class _Magic8BallPageState extends State<Magic8BallPage> {
   @override
   void dispose() {
     detector.stopListening();
-    api.dispose();
     super.dispose();
   }
 }
