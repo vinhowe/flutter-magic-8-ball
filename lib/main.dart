@@ -40,7 +40,7 @@ class _Magic8BallPageState extends State<Magic8BallPage> {
     super.initState();
     api = ResponseApi();
     // Get initial answer
-    api.fetchAnswer();
+    newAnswer();
 
     detector = ShakeDetector.autoStart(
         onPhoneShake: () {
