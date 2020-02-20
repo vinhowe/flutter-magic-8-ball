@@ -96,7 +96,7 @@ class _Magic8BallPageState extends State<Magic8BallPage> {
                       if (snapshot.hasData) {
                         message = snapshot.data;
                       } else {
-                        message = widget.defaultMessage;
+                        message = Magic8BallPage.defaultMessage;
                       }
 
                       return Text(
