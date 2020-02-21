@@ -1,5 +1,7 @@
 # Magic 8 ball demo
 
+![Demo screenshot](./screenshots/demo.png)
+
 Demo for basic Flutter concepts, including:
 - The [Dart](https://flutter.dev/docs/resources/bootstrap-into-dart) language
 - [Theming](https://flutter.dev/docs/cookbook/design/themes)
