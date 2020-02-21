@@ -12,7 +12,7 @@ class Magic8BallApp extends StatelessWidget {
     return MaterialApp(
       title: 'Magic 8 Ball',
       theme: ThemeData(
-        primarySwatch: Colors.purple,
+        primarySwatch: Colors.blue,
         canvasColor: Colors.blue,
         brightness: Brightness.dark,
       ),
