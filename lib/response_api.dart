@@ -4,8 +4,6 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class ResponseApi {
-  List<String> responses;
-
   static final String apiUrl = "https://8ball.delegator.com/magic/JSON/_";
 
   Future<String> fetchAnswer() async {
