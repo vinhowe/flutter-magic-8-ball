@@ -1,6 +1,6 @@
 # Magic 8 ball demo
 
-![Demo screenshot](./screenshots/demo.png)
+<img src="./screenshots/demo.png" width="150" alt="Demo screenshot"></img>
 
 Demo for basic Flutter concepts, including:
 - The [Dart](https://flutter.dev/docs/resources/bootstrap-into-dart) language
