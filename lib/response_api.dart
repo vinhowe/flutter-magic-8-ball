@@ -7,7 +7,6 @@ class ResponseApi {
   static final String apiUrl = "https://8ball.delegator.com/magic/JSON/_";
 
   Future<String> fetchAnswer() async {
-    // TODO: Make this API URL into a constant
     final response = await http.get(apiUrl);
 
     if (response.statusCode == 200) {
