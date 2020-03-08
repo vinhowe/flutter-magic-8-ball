@@ -42,16 +42,16 @@ class _Magic8BallPageState extends State<Magic8BallPage> {
     api = ResponseApi();
     // Get initial answer
     message = Magic8BallPage.defaultMessage;
-    newAnswer();
+    newMessage();
 
     detector = ShakeDetector.autoStart(
         onPhoneShake: () {
-          newAnswer();
+          newMessage();
         },
         shakeThresholdGravity: 1.5);
   }
 
-  void newAnswer() async {
+  void newMessage() async {
     String newMessage = await api.fetchAnswer();
     setState(() {
       message = newMessage;
@@ -72,7 +72,7 @@ class _Magic8BallPageState extends State<Magic8BallPage> {
                 elevation: 30,
                 clipBehavior: Clip.antiAlias,
                 child: InkWell(
-                  onTap: newAnswer,
+                  onTap: newMessage,
                   child: Container(
                     decoration: BoxDecoration(
                         gradient: RadialGradient(
